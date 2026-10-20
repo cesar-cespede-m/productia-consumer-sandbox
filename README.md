@@ -30,3 +30,5 @@ aprobaciones ya registradas por personas.
 
 Limitación conocida: en un push de tag, GitHub usa el workflow del commit etiquetado. El gate sólo
 es confiable si los tags se crean sobre commits que ya pasaron por `main` protegida.
+
+Ensayo SDLC-02.2: PR que no toca model-usage/.
