@@ -53,7 +53,7 @@ jobs:
 
       - name: Sin cambios en model-usage/
         if: steps.scope.outputs.required != 'true'
-        run: echo "No aplica: el PR no modifica model-usage/; no se exige evidencia ProductIA."
+        run: echo "No aplica - el PR no modifica model-usage/ y no se exige evidencia ProductIA."
 
       - uses: actions/setup-python@v5
         if: steps.scope.outputs.required == 'true'
