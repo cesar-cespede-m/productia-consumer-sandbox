@@ -67,7 +67,8 @@ jobs:
       - name: Verificar evidencia ProductIA
         if: steps.scope.outputs.required == 'true'
         env:
-          EVIDENCE_B64: ${{ vars.PRODUCTIA_RELEASE_EVIDENCE_B64 }}
+          # Secreto, no variable: GitHub oculta los secretos en los registros públicos.
+          EVIDENCE_B64: ${{ secrets.PRODUCTIA_RELEASE_EVIDENCE_B64 }}
           EXPECTED_REPO: ${{ github.repository }}
           EXPECTED_COMMIT: ${{ steps.scope.outputs.commit }}
         run: |

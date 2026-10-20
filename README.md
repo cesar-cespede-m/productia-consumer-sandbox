@@ -4,8 +4,8 @@ Repositorio de prueba para demostrar que una versión consumidora no puede integ
 `model-usage/` ni publicar tags `v*` sin evidencia ProductIA válida para el commit exacto.
 
 No contiene datos productivos, modelos reales ni aprobaciones automatizadas. La evidencia llega
-fuera del commit mediante la variable GitHub Actions `PRODUCTIA_RELEASE_EVIDENCE_B64`; ProductIA
-la verifica antes de actualizar esa variable. El CI sólo verifica firma, sujeto, vigencia y
+fuera del commit mediante el secreto GitHub Actions `PRODUCTIA_RELEASE_EVIDENCE_B64`; ProductIA
+la verifica antes de actualizar ese secreto. El CI sólo verifica firma, sujeto, vigencia y
 aprobaciones ya registradas por personas.
 
 ## Estructura
@@ -25,7 +25,7 @@ aprobaciones ya registradas por personas.
   pasa.
 - Usa `pull_request_target`: el workflow, el verificador y la clave pública salen de `main`; del
   PR sólo se lee la lista de archivos cambiados, nunca se ejecuta su código.
-- Códigos: 0 válida, 10 esquema/variable ausente, 11 firma, 12 otro repo o commit, 13 vencida,
+- Códigos: 0 válida, 10 esquema o secreto ausente, 11 firma, 12 otro repo o commit, 13 vencida,
   14 no aprobada/publicada, 15 contexto o estrategia no vigentes al emitir.
 
 Limitación conocida: en un push de tag, GitHub usa el workflow del commit etiquetado. El gate sólo
